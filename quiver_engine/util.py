@@ -37,7 +37,7 @@ def get_input_config(model):
     return (
         model.get_input_shape_at(0)[2:4],
         model.get_input_shape_at(0)[1]
-    ) if K.image_dim_ordering() == 'th' else (
+    ) if K.image_data_format() == 'th' else (
         #tf ordering
         model.get_input_shape_at(0)[1:3],
         model.get_input_shape_at(0)[3]

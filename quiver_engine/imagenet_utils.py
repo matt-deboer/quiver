@@ -16,7 +16,7 @@ CLASS_INDEX_PATH = 'https://s3.amazonaws.com/deep-learning-models/image-models/i
 
 def preprocess_input(x, dim_ordering='default', mean=None, std=None):
     if dim_ordering == 'default':
-        dim_ordering = K.image_dim_ordering()
+        dim_ordering = K.image_data_format()
     assert dim_ordering in {'tf', 'th'}
 
     if mean is not None:
